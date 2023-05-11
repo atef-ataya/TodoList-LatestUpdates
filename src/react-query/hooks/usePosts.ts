@@ -1,21 +1,21 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 
-interface Todo {
+interface Post {
   id: number;
   title: string;
+  body: string;
   userId: number;
-  completed: boolean;
 }
 
-const useTodos = () =>
-  useQuery<Todo[], Error>({
+const usePosts = () =>
+  useQuery<Post[], Error>({
     queryKey: ['posts'],
     queryFn: () =>
       axios
-        .get<Todo[]>('https://jsonplaceholder.typicode.com/todos')
+        .get<Post[]>('https://jsonplaceholder.typicode.com/todos')
         .then((res) => res.data),
     staleTime: 1 * 60 * 1000,
   });
 
-export default useTodos;
+export default usePosts;
