@@ -10,7 +10,7 @@ export interface Todo {
 
 const useTodos = () =>
   useQuery<Todo[], Error>({
-    queryKey: ['posts'],
+    queryKey: ['todos'],
     queryFn: () =>
       axios
         .get<Todo[]>('https://jsonplaceholder.typicode.com/todos')
