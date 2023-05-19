@@ -10,7 +10,6 @@ import AuthContext from './state-management/contexts/authContext';
 
 function App() {
   const [tasks, tasksDispatch] = useReducer(tasksReducers, []);
-  const [user, authDispatch] = useReducer(authReducer, '');
 
   return (
     <AuthContext.Provider value={{ user, dispatch: authDispatch }}>
@@ -23,3 +22,4 @@ function App() {
 }
 
 export default App;
+sss
